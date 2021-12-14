@@ -1,5 +1,5 @@
 import os
-from flask import Flask #Importing Flask class
+from flask import Flask, render_template #Importing Flask class
 
 
 app = Flask(__name__) #Storing an instance of Flask in the app variable
@@ -7,7 +7,7 @@ app = Flask(__name__) #Storing an instance of Flask in the app variable
 
 @app.route("/")
 def index():
-    return "Hello, World"
+    return render_template("index.html")
 
 
 
