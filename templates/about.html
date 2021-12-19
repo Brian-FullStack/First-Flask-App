@@ -11,19 +11,37 @@
 
 {% for greekGod in gods %}
 
-    <div class="row featurette">
-        <div class="col-md-7">
-            <h3>{{ greekGod["name"] }}</h3>
-            <p>
-                {{ greekGod["description"] }}
-            </p>
-        </div>
-        <div class="col-md-5">
-            <img src="{{ greekGod.image_source }}" alt="" class="featurette-image image-responsive">
-        </div>
-    </div>
+{% if loop.index % 2 != 0 %}
 
-    <hr class="featurette-divider">
+<div class="row featurette">
+    <div class="col-md-7">
+        <h3>{{ loop.index }}. {{ greekGod["name"] }}</h3>
+        <p>
+            {{ greekGod["description"] }}
+        </p>
+    </div>
+    <div class="col-md-5">
+        <img src="{{ greekGod.image_source }}" alt="" class="featurette-image image-responsive">
+    </div>
+</div>
+
+{% else %}
+
+<div class="row featurette">
+    <div class="col-md-5">
+        <img src="{{ greekGod.image_source }}" alt="" class="featurette-image image-responsive">
+    </div>
+    <div class="col-md-7">
+        <h3>{{ loop.index }}. {{ greekGod["name"] }}</h3>
+        <p>
+            {{ greekGod["description"] }}
+        </p>
+    </div>
+</div>
+
+
+{% endif %}
+<hr class="featurette-divider">
 
 {% endfor %}
 
