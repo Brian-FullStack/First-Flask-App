@@ -19,6 +19,16 @@ def about():
     return render_template("about.html", page_title="About", gods=data)
 
 
+@app.route("/about/<greekGod_name>")    
+def about_greekGod(greekGod_name):
+    greekGod = {}
+    with open("data/gods.json", "r") as json_data:
+        data = json.load(json_data)
+        for obj in data:
+            if obj["url"] == greekGod_name:
+                greekGod = obj
+    return render_template("greekGod.html", greekGod = greekGod)
+
 @app.route("/contact")
 def contact():
     return render_template("contact.html", page_title="Contact")
