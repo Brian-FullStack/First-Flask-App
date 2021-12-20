@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-5">
+            <img src="{{ greekGod.image_source }}" alt="Profile image for {{ greekGod.name }}">
+            <h2 class="col-md-7">{{ greekGod.name }}</h2>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <p>{{ greekGod.description }}</p>
+    </div>
+
+
+{% endblock %}
