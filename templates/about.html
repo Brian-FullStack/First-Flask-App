@@ -15,7 +15,7 @@
 
 <div class="row featurette">
     <div class="col-md-7">
-        <h3>{{ loop.index }}. {{ greekGod["name"] }}</h3>
+        <h3><a href="/about/{{ greekGod.url }}">{{ loop.index }}. {{ greekGod["name"] }}</a></h3>
         <p>
             {{ greekGod["description"] }}
         </p>
@@ -32,7 +32,7 @@
         <img src="{{ greekGod.image_source }}" alt="" class="featurette-image image-responsive">
     </div>
     <div class="col-md-7">
-        <h3>{{ loop.index }}. {{ greekGod["name"] }}</h3>
+        <h3><a href="/about/{{ greekGod.url }}">{{ loop.index }}. {{ greekGod["name"] }}</a></h3>
         <p>
             {{ greekGod["description"] }}
         </p>
