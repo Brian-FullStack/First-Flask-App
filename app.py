@@ -1,6 +1,6 @@
 import os
 import json
-from flask import Flask, render_template #Importing Flask class
+from flask import Flask, render_template, request#Importing Flask class
 
 
 app = Flask(__name__) #Storing an instance of Flask in the app variable
@@ -29,8 +29,10 @@ def about_greekGod(greekGod_name):
                 greekGod = obj
     return render_template("greekGod.html", greekGod = greekGod)
 
-@app.route("/contact")
+@app.route("/contact", methods=["GET", "POST"])
 def contact():
+    if request.method == "POST":
+        print(request.form.get("name"))
     return render_template("contact.html", page_title="Contact")
 
 
